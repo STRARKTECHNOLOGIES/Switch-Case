@@ -1,0 +1,42 @@
+import java.util.*;
+class Deposit
+{
+    public static void main (String Args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome To Stark Funds make Your Choice(1 & 2 ):");
+        System.out.println("1.Term Deposit");
+        System.out.println("2.Recurring Deposit");
+        int in = sc.nextInt(); //Here "in" Stands For input
+        switch(in)
+        {
+            case 1 : System.out.println("Ohh We saw you wanted to make a Term deposit Here You Go (Note: If you wanted make a Recurring Deposit restart The Program)");
+                System.out.println("Enter your Principal Amount :");         
+                double p = sc.nextDouble();
+                System.out.println("Enter your Rate Of Interest (Bank Staff Should Fill this)");
+                double r = sc.nextDouble();
+                System.out.println("Enter The Time Period on Yaers:");
+                double n = sc.nextDouble();
+                double a = 1 + (r/100);
+                double A = p*Math.pow(a,n);
+                System.out.println("Maturity Amount:" + A );
+                break;
+            case 2 : System.out.println("Ohh We saw you wanted to make a Recurring Deposits here you go! (Note: If you Wanted To make a Term Deposit Restart the program)");
+                System.out.println("Enter The Monthly Installment Amount:");
+                p = sc.nextDouble();
+                System.out.println("Enter rate Of Interest (Must Filled My Bank Staff):");
+                r = sc.nextDouble();
+                System.out.println("Enter the Time Peroid In Months:");
+                n = sc.nextDouble();
+                double x = (r/100)*(1/12);
+                double y = (n*(n+1)/2)*x;
+                double X = (p*n)+(p*y);
+                System.out.println("Maturity Amount:" + X);
+                break;
+            default: System.out.println("Oops! Seem To Be Worng Input We only Support 1 & 2 as input for Choice Restart the Program to retry");
+        }
+    }
+}
+
+
+// This Program Is Coded By Stark Industries You Can Ckeck This Code Also At https://github.com/STRARKTECHNOLOGIES/Switch-Case
